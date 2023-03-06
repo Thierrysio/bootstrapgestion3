@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Controller;
-
+use App\Form\CoursesType;
 use App\Entity\Courses;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -37,6 +37,7 @@ class CoursesController extends AbstractController
  
         if(($form->isSubmitted() && $form->isValid()))
         {
+            
             
             $manager->persist($uneCourse);
             
