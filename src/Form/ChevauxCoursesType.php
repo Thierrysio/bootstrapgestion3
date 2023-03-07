@@ -8,6 +8,8 @@ use App\Entity\Courses;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
+
 
 class ChevauxCoursesType extends AbstractType
 {
