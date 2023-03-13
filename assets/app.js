@@ -17,5 +17,7 @@ import './bootstrap';
 import { createApp } from 'vue';
 import App from './js/App.vue';
 import Tableau from './js/test.vue';
+import TableauCell from './js/test2.vue';
 createApp(App).mount('#vue-app');
 createApp(Tableau).mount('#tab-app');
+createApp(TableauCell).mount('#table');

@@ -34,6 +34,8 @@
           this.lesproprietaires = data;
         });
     },
+
+    
   };
   </script>
   

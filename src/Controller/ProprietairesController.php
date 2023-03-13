@@ -3,6 +3,7 @@
 namespace App\Controller;
 use App\Entity\Proprietaires;
 use App\Form\ProprietairesType;
+use App\Repository\ProprietairesRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
@@ -24,14 +25,14 @@ class ProprietairesController extends AbstractController
      
     public function GestionProprietaires(Proprietaires $unProprietaire = null,
     Request $request, 
-    EntityManagerInterface $manager)
+    EntityManagerInterface $manager,ProprietairesRepository $ProprietairesRepository)
     {
-        
+        $lesproprietaires = $ProprietairesRepository->findAll();
         if(!$unProprietaire)
         {$unProprietaire = new Proprietaires();}
         
  
-        $form = $this->createForm(ProprietairesType::class,$unProprietaire);
+        $form = $this->createForm( ProprietairesType::class,$unProprietaire);
  
         $form->handleRequest($request);
  
@@ -47,7 +48,8 @@ class ProprietairesController extends AbstractController
  
         return $this->render('proprietaires/GestionProprietaire.html.twig', [
             'form' => $form->createView(),
-            'editmode' => $unProprietaire->getId() !== null
+            'editmode' => $unProprietaire->getId() !== null,
+            'lesproprietaires' => $lesproprietaires
         ]);
     }
 }

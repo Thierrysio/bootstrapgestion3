@@ -13,12 +13,27 @@
     <h3>My Symfony 4 sample project</h3>
 
     <div class="jumbotron text-center">
-    <div id='tab-app'>
+    <div id='table'>
       {# L'appli Vue.js vivra ici #}
       </div>
     </div>
 </div>
-
+<table>
+    <thead>
+        <tr>
+            <th>Titre</th>
+            <th>Quantité</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for item in lesproprietaires %}
+            <tr>
+                <td>{{ item.id }}</td>
+                <td>{{ item.nomProprietaire }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+</table>
 {% endblock %}
 
 
