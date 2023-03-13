@@ -1,5 +1,24 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}gestion des courses{% endblock %}
+
+{% block body %}
 {{ form_start(form) }}
     {{ form_widget(form) }}
 
-    <input type="submit"/>
+    <input class = "btn btn-primary" type="submit"/>
 {{ form_end(form) }}
+
+<div class="text-center">
+    <h3>My Symfony 4 sample project</h3>
+
+    <div class="jumbotron text-center">
+    <div id='vue-app'>
+      {# L'appli Vue.js vivra ici #}
+      </div>
+    </div>
+</div>
+
+{% endblock %}
+
+
