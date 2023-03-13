@@ -32,7 +32,6 @@ public function getEntitiesAction(ProprietairesRepository $proprietairesReposito
             // Ajoutez ici les autres champs de votre entité
         ];
     }
-dd($data);
     return new JsonResponse($data);
 }
 

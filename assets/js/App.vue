@@ -3,7 +3,7 @@ export default {
   data() {
     return {
       name: '',
-      hello: 'vv'
+      hello: ''
     }
   },
   methods: {
@@ -14,7 +14,7 @@ export default {
         .then(result => this.hello = result);
       }
     }
-  }
+ }
 }
 </script>
 

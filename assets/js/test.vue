@@ -8,12 +8,13 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="leproprietaire in lesproprietaires" :key="entity.id">
+        <tr v-for="leproprietaire in lesproprietaires" :key="leproprietaire.id">
           <td>{{ leproprietaire.id }}</td>
           <td>{{ leproprietaire.nomproprietaire }}</td>
           <!-- Ajoutez ici les autres cellules de la ligne -->
         </tr>
-      </tbody>
+   
+   </tbody>
     </table>
   </template>
   
