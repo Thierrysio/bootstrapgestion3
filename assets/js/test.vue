@@ -26,14 +26,14 @@
         lesproprietaires: [],
       };
     },
-  
-    mounted() {
+  mounted() {
       fetch('/api/apivue')
         .then(response => response.json())
         .then(data => {
           this.lesproprietaires = data;
         });
     },
+    
 
     
   };

@@ -3,37 +3,18 @@
 {% block title %}gestion des courses{% endblock %}
 
 {% block body %}
-{{ form_start(form) }}
-    {{ form_widget(form) }}
 
-    <input class = "btn btn-primary" type="submit"/>
-{{ form_end(form) }}
 
 <div class="text-center">
     <h3>My Symfony 4 sample project</h3>
 
     <div class="jumbotron text-center">
-    <div id='table'>
+    <div id='table-maj'>
       {# L'appli Vue.js vivra ici #}
       </div>
     </div>
 </div>
-<table>
-    <thead>
-        <tr>
-            <th>Titre</th>
-            <th>Quantité</th>
-        </tr>
-    </thead>
-    <tbody>
-        {% for item in lesproprietaires %}
-            <tr>
-                <td>{{ item.id }}</td>
-                <td>{{ item.nomProprietaire }}</td>
-            </tr>
-        {% endfor %}
-    </tbody>
-</table>
+
 {% endblock %}
 
 

@@ -8,10 +8,14 @@
   </thead>
   <tbody>
     <tr v-for="row in rows" :key="row.id">
-      <td :class="{ 'negative': row.column1 < 0 }" contenteditable @keydown.tab="handleInput($event,row, 'column1')">
+      <td :class="{ 'negative': row.column1 < 0 }" contenteditable @keydown.enter="handleInput($event,row, 'column1')">
+        <!--<td :class="{ 'negative': row.column1 < 0 }" contenteditable @keyup.enter="handleInput($event,row, 'column1')">-->
+ 
         {{ row.column1 }}
       </td>
-      <td :class="{ 'negative': row.column2 < 0 }" contenteditable @keydown.tab="handleInput($event,row, 'column2')">
+      <!--<td :class="{ 'negative': row.column2 < 0 }" contenteditable @keyup.enter="handleInput($event,row, 'column2')">-->
+
+      <td :class="{ 'negative': row.column2 < 0 }" contenteditable @keydown.enter="handleInput($event,row, 'column2')">
         {{ row.column2 }}   
       </td>
     </tr>
@@ -34,6 +38,7 @@
     methods: {
     handleInput(e,row, column) {
       row[column] = parseFloat(e.target.innerText);
+      e.preventDefault();
       console.log(e)
     }
   },
