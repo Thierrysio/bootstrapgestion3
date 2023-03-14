@@ -3,6 +3,7 @@
 namespace App\Controller;
 use App\Entity\Proprietaires;
 use App\Repository\ProprietairesRepository;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
@@ -42,5 +43,17 @@ public function getEntitiesAction(ProprietairesRepository $proprietairesReposito
     {
      
       return new JsonResponse('hello ' . $name);
+    }
+
+    #[Route('/api/maj/{id}/{nomproprietaire}', name: 'api_maj')]
+    
+    public function apiMajProprietaire(Proprietaires $leproprietaire,string $nomproprietaire, EntityManagerInterface $manager): Response
+    {
+        
+$leproprietaire->setNomProprietaire($nomproprietaire);
+        $manager->persist($leproprietaire);
+            
+        $manager->flush();
+      return new JsonResponse('retour ' . "ok");
     }
 }
