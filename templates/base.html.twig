@@ -11,15 +11,66 @@
 
         {% block javascripts %}
             {{ encore_entry_script_tags('app') }}
-          
+
            <script type="text/javascript">  
 ;  
 </script>
         {% endblock %}
     </head>
+    {% block header %}
+<header>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container-fluid">
+    <!-- Logo / image -->
+    <a class="navbar-brand" href="#">
+      <img src="chemin/vers/mon/image.png" alt="Logo" height="30">
+    </a>
+
+    <!-- Bouton pour afficher la navbar sur les petits écrans -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDarkDropdown" aria-controls="navbarNavDarkDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+      <ul class="navbar-nav">
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Dropdown
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark" aria-labelledby="navbarDarkDropdownMenuLink">
+            <li><a class="dropdown-item" href="#">Action</a></li>
+            <li><a class="dropdown-item" href="#">Another action</a></li>
+            <li><a class="dropdown-item" href="#">Something else here</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+      <!-- Boutons de connexion/déconnexion -->
+      <div class="d-flex">
+        <button class="btn btn-outline-light me-2">Connexion</button>
+        <button class="btn btn-outline-light">Déconnexion</button>
+      </div>
+    </div>
+  </div>
+</nav>
+
+
+</header>
+{% endblock %}
     <body>
       
-      
+ 
        {% block body %}{% endblock %}
   
     </body>

@@ -30,17 +30,27 @@ s cellules de la ligne -->
       };
     },
     methods: {
-      miseajour() {
-        fetch('/api/apivue')
-          .then(response => response.json())
-          .then(data => {
-            this.lesproprietaires = data;
-          });
-      },
+      async miseajour() {
+  try {
+    const response = await fetch('/api/apivue');
+    const data = await response.json();
+    this.lesproprietaires = data;
+  } catch (error) {
+    console.error(error);
+  }
+}
+,
       handleInput(e,row, column) {
     
       e.preventDefault();
-      fetch("/api/maj/"+row.id+"/" + e.target.innerText , {"method": "GET"})
+      fetch("/api/maj/"+
+      
+      
+      
+      
+      
+      
+      row.id+"/" + e.target.innerText , {"method": "GET"})
 
           .then(response => response.json())
           .then(result => this.hello = result);
