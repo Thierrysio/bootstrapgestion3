@@ -3,8 +3,10 @@
 namespace App\Controller;
 use App\Form\CoursesType;
 use App\Entity\Courses;
+use App\Repository\CoursesRepository;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -51,4 +53,15 @@ class CoursesController extends AbstractController
             'editmode' => $uneCourse->getId() !== null
         ]);
     }
+
+    #[Route('/courses/getgagnant', name: 'getgagnant')]
+
+    public function getGagnant(CoursesRepository $coursesRepository)
+    {
+        $legagnant = $coursesRepository->findCourseChevalResultat();
+    
+        dd($legagnant);
+        return new JsonResponse($legagnant);
+    }
+    
 }

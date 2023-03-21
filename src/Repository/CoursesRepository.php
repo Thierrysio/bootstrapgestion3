@@ -39,6 +39,18 @@ class CoursesRepository extends ServiceEntityRepository
         }
     }
 
+    public function findCourseChevalResultat()
+    {
+        return $this->createQueryBuilder('c')
+            ->join('c.lesCoursesChevaux', 'cc')
+            ->join('cc.leCheval', 'ch')
+            ->where('cc.resultat = :resultat')
+            ->setParameter('resultat', 1)
+            ->select('c.nomCourse', 'ch.nomCheval', 'cc.resultat')
+            ->getQuery()
+            ->getResult();
+    }
+
 //    /**
 //     * @return Courses[] Returns an array of Courses objects
 //     */
