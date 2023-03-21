@@ -20,6 +20,8 @@ import App from './js/App.vue';
 //import Tableau from './js/test.vue';
 //import TableauCell from './js/test2.vue';
 import TableauMaj from './js/TableauMaj.vue';
+import Gagnant from './js/gagnant.vue';
 createApp(App).mount('#vue-app');
 //createApp(Tableau).mount('#tab-app');
 createApp(TableauMaj).mount('#table-maj');
+createApp(Gagnant).mount('#gagnant');

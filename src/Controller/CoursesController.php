@@ -58,9 +58,8 @@ class CoursesController extends AbstractController
 
     public function getGagnant(CoursesRepository $coursesRepository)
     {
-        $legagnant = $coursesRepository->findCourseChevalResultat();
+        $legagnant = $coursesRepository->findCourseChevalResultat(1,1);
     
-        dd($legagnant);
         return new JsonResponse($legagnant);
     }
     

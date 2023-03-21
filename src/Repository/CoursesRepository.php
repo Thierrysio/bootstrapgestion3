@@ -39,13 +39,15 @@ class CoursesRepository extends ServiceEntityRepository
         }
     }
 
-    public function findCourseChevalResultat()
+    public function findCourseChevalResultat($resultat,$course)
     {
         return $this->createQueryBuilder('c')
             ->join('c.lesCoursesChevaux', 'cc')
             ->join('cc.leCheval', 'ch')
             ->where('cc.resultat = :resultat')
-            ->setParameter('resultat', 1)
+            ->andWhere('c.id = :courseid')
+            ->setParameter('resultat', $resultat)
+            ->setParameter('courseid', $course)
             ->select('c.nomCourse', 'ch.nomCheval', 'cc.resultat')
             ->getQuery()
             ->getResult();
