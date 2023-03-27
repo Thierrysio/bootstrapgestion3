@@ -1,5 +1,5 @@
 <template>
-   <div><h1> <ChildComponents :maVariable = "'Bonjour, Monde!'"/></h1></div> 
+   <div><h1> <ChildComponents :maVariable = "variableParent"/></h1></div> 
    <div><h1>sss</h1></div>
 </template>
   
