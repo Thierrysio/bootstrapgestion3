@@ -21,6 +21,12 @@ import App from './js/App.vue';
 //import TableauCell from './js/test2.vue';
 import TableauMaj from './js/TableauMaj.vue';
 import Gagnant from './js/gagnant.vue';
+
+import ParentComponents from './Components/parent.vue';
+//import ChildComponents from './Components/enfant.vue';
+createApp(ParentComponents).mount('#ParentComponent');
+//createApp(ChildComponents).mount('#ChildComponents');
+
 createApp(App).mount('#vue-app');
 //createApp(Tableau).mount('#tab-app');
 createApp(TableauMaj).mount('#table-maj');
